@@ -1,0 +1,9 @@
+{
+  "name": "hzj-ui",
+  "keywords": ["vue", "ui", "framework"],
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:hzj5016/hzj-ui.git",
+  "author": "hzj5016 <hzj5016@gmail.com>",
+  "license": "MIT"
+}
