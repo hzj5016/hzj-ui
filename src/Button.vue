@@ -1,6 +1,7 @@
 <template>
   <button class="h-button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
-    <h-icon :name="icon" v-if="icon" :class="{loading: loading}"></h-icon>
+    <h-icon :name="icon" class="h-icon" v-if="icon && !loading"></h-icon>
+    <h-icon name="loading" class="loading h-icon" v-if="loading"></h-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -30,7 +31,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @keyframes spin {
   0% {transform: rotate(0deg)}
   100% {transform: rotate(360deg)}

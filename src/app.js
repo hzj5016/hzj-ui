@@ -8,6 +8,7 @@ Vue.component('h-icon', Icon)
 
 new Vue({
   data: {
-    loading1: false
+    loading1: false,
+    loading2: false
   }
 }).$mount('#app')
