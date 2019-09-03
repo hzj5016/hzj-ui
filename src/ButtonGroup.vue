@@ -5,7 +5,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    for(let node of this.$el.children) {
+      if(node.nodeName !== 'BUTTON') {
+        console.warn('button被其他元素包裹会出现布局问题, 请谨慎使用~');
+        
+      }
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -14,6 +23,9 @@ export default {};
   vertical-align: middle;
   > .h-button {
     border-radius: 0;
+    &:not(:first-child){
+      margin-left: -1px;
+    }
     margin-left: -1px;
     // :first-child 表示一组兄弟中的第一个
     &:first-child {
