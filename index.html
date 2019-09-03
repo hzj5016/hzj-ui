@@ -15,7 +15,8 @@
       --border-radius: 4px;
       --color: #333;
       --border-color: #999;
-      --border-color-hover: #666;
+      /* --border-color-hover: #666; */
+      --border-color-hover: red;
     }
     #app {
       margin: 20px;
@@ -33,6 +34,11 @@
     下载
   </h-button>
   <h-button icon="upload" icon-position="right" :loading="loading2" @click="loading2 = !loading2">上传</h-button>
+  <h-button-group>
+    <h-button icon="left">上一页</h-button>
+    <h-button>更多</h-button>
+    <h-button icon="right">下一页</h-button>
+  </h-button-group>
 </div>
 <script src="./src/app.js"></script>
 <script src="//at.alicdn.com/t/font_1381791_8nb20e592h.js"></script>

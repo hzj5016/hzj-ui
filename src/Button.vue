@@ -49,7 +49,7 @@ export default {
   align-items: center;
   vertical-align: middle;
   &:hover {
-    border-color: var(--border-color);
+    border-color: var(--border-color-hover);
     background: #eee;
     transition: background-color 0.6s;
   }
