@@ -14,3 +14,20 @@ new Vue({
     loading2: false
   }
 }).$mount('#app')
+
+// 单元测试
+import chai from 'chai'
+const expect = chai.expect
+
+{
+  const Constructor = Vue.extend(Button)
+  const button = new Constructor({
+    propsData: {
+      icon: 'download'
+    }
+  })
+  button.$mount('#test')
+  const el = button.$el.querySelector('use')
+  expect(el.getAttribute('xlink:href')).to.eq('#h-download')
+  
+}
