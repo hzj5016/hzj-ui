@@ -17,6 +17,8 @@ new Vue({
 
 // 单元测试
 import chai from 'chai'
+import spies from 'chai-spies'
+chai.use(spies)
 const expect = chai.expect
 // 测试icon
 {
@@ -61,8 +63,9 @@ const expect = chai.expect
     }
   })
   button.$mount()
-  button.$on('click', () => {
-    console.log(1)
-  })
+  // 里面的箭头函数就是被spy代理的函数
+  let spy = chai.spy(() => {})
+  button.$on('click', spy)
   button.$el.click()
+  expect(spy).has.been.called()
 }
