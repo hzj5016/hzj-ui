@@ -9,7 +9,12 @@
 </template>
 
 <script>
+import HIcon from './Icon'
+
 export default {
+  components: {
+    HIcon
+  },
   props: {
     icon: {},
     iconPosition: {

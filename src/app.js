@@ -20,7 +20,7 @@ import chai from 'chai'
 import spies from 'chai-spies'
 chai.use(spies)
 const expect = chai.expect
-// 测试icon
+// 测试icon是否存在
 {
   const Constructor = Vue.extend(Button)
   const button = new Constructor({
