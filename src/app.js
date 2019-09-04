@@ -18,7 +18,7 @@ new Vue({
 // 单元测试
 import chai from 'chai'
 const expect = chai.expect
-
+// 测试icon
 {
   const Constructor = Vue.extend(Button)
   const button = new Constructor({
@@ -29,5 +29,40 @@ const expect = chai.expect
   button.$mount('#test')
   const el = button.$el.querySelector('use')
   expect(el.getAttribute('xlink:href')).to.eq('#h-download')
-  
+  // 测试通过后
+  button.$destroy()
+  button.$el.remove()
+}
+// 测试icon位置
+{
+  let div = document.createElement('div')
+  document.body.appendChild(div)
+  const Constructor = Vue.extend(Button)
+  const button = new Constructor({
+    propsData: {
+      icon: 'right',
+      iconPosition: 'right'
+    }
+  })
+  button.$mount(div)
+  let svg = button.$el.querySelector('svg')
+  let {order} = window.getComputedStyle(svg)
+  expect(order).to.eq('2')
+  button.$destroy()
+  button.$el.remove()
+}
+// 测试按钮点击
+{
+  const Constructor = Vue.extend(Button)
+  const button = new Constructor({
+    propsData: {
+      icon: 'right',
+      iconPosition: 'right'
+    }
+  })
+  button.$mount()
+  button.$on('click', () => {
+    console.log(1)
+  })
+  button.$el.click()
 }
